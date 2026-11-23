@@ -1,0 +1,43 @@
+\section{What to print}\label{sec:printing}
+
+All six parts are in \code{stl/} and numbered in print order. Print everything in \textbf{white PLA+}. None of
+them needs supports: every overhang is either a short bridge or a 45° chamfer.
+
+\subsection{Print orientation and settings}
+
+\begin{table}[H]
+\centering
+\caption{Per-part orientation and settings. Masses are estimates for the recommended infill.}
+\label{tab:print}
+\zebra
+\begin{tabularx}{\linewidth}{@{}L{2.6cm}L{2.2cm}Y L{2.4cm}L{1.6cm}@{}}
+\toprule
+\thd{Part} & \thd{Bed size (mm)} & \thd{Orientation} & \thd{Walls · infill} & \thd{Approx.} \\
+\midrule
+01 Base         & 216 × 208, 30 tall & Flat on its bottom, the face with the two counterbored holes & 6 walls · \textbf{100\%} (min. 60\%) & 1.1\,kg \\
+02/03 Feet      & 84 × 212, 18 tall  & Flat on their bottoms. Print one of each (they are mirrored) & 6 walls · \textbf{100\%} (min. 60\%) & 80\,g each \\
+04 Lower column & 203 × 62, 56 tall  & \textbf{On its side}, with the half-lap step facing \textbf{up} (the long, uninterrupted side on the bed) & 5 walls · 40\% gyroid & 290\,g \\
+05 Upper arm    & 174 × 90, 56 tall  & \textbf{On its side}, with the half-lap step facing \textbf{up}. The counterbores end up on the bed side, that is fine & 5 walls · 40\% gyroid & 210\,g \\
+06 VESA plate   & 116 × 116, 10 tall & Flat, with the side that touches the head \textbf{down} (the shallow M4 counterbores and grooves on the bed) & 5 walls · 60\% & 60\,g \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{nota}
+\textbf{Why on its side?} The column and arm carry the monitor as a bending load. Printed on their side, every
+layer runs along the full length of the part, which is several times stronger than stacking the layers along it.
+\end{nota}
+
+\begin{itemize}
+  \item \textbf{Layer height} 0.20\,mm, \textbf{top/bottom} 6 layers, nozzle 210--220\,°C for PLA+, bed 60\,°C.
+  \item \textbf{Infill pattern} gyroid. A 5\,mm brim on the column and arm helps them stay flat.
+  \item \textbf{Filament.} With the base and feet at 100\% the set uses about 1.9\,kg (two spools). At 60\% it is about 1.5\,kg.
+  \item \textbf{Hole sizes.} Insert holes are 6.4\,mm, screw clearance holes 5.5\,mm (M5) and 4.6\,mm (M4). If your
+        printer prints holes small, run a 6.4\,mm or 5.5\,mm drill through by hand.
+\end{itemize}
+
+\begin{aviso}
+\textbf{Print the base and feet dense.} They are the counterweight. With 100\% infill the stand needs about
+30\% more force to tip over than with a normal 45\% print (\cref{sec:safety}). If you print them lighter,
+add the rubber pads and keep the stand away from the desk edge.
+\end{aviso}

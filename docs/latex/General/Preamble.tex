@@ -1,0 +1,53 @@
+% Packages, grouped by purpose (same base as the Okorum report, in English).
+
+% --- Language and fonts -----------------------------------------------------------------------
+\usepackage{fontspec}
+\XeTeXgenerateactualtext = 1
+\usepackage[english]{babel}
+\setmainfont{SourceSansPro}[
+    Path = fonts/, Extension = .otf,
+    UprightFont = *-Regular, BoldFont = *-Semibold, ItalicFont = *-RegularIt, BoldItalicFont = *-SemiboldIt,
+    FontFace = {l}{n}{*-Light}, FontFace = {l}{it}{*-LightIt}, FontFace = {b}{n}{*-Bold}, FontFace = {b}{it}{*-BoldIt},
+]
+\setsansfont{SourceSansPro}[
+    Path = fonts/, Extension = .otf,
+    UprightFont = *-Regular, BoldFont = *-Semibold, ItalicFont = *-RegularIt, BoldItalicFont = *-SemiboldIt,
+]
+\setmonofont{lmmono10-regular.otf}[Scale = MatchLowercase]
+\newfontfamily\heavyfont{SourceSansPro}[Path = fonts/, Extension = .otf, UprightFont = *-Bold]
+\newfontfamily\lightfont{SourceSansPro}[Path = fonts/, Extension = .otf, UprightFont = *-Light, ItalicFont = *-LightIt]
+
+% --- Page and typography ----------------------------------------------------------------------
+\usepackage[a4paper, top = 2.7cm, bottom = 2.5cm, left = 2.4cm, right = 2.4cm, headheight = 22pt, headsep = 14pt]{geometry}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{multicol}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{appendix}
+
+% --- Figures and tables -----------------------------------------------------------------------
+\usepackage{graphicx}
+\graphicspath{{../../images/}}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{amssymb}
+
+% --- Drawing and boxes ------------------------------------------------------------------------
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc, arrows.meta, shapes.geometric, fit, backgrounds}
+\usepackage[most]{tcolorbox}
+
+% --- Links (last, as hyperref asks) -----------------------------------------------------------
+\usepackage{hyperref}
+\usepackage[noabbrev, capitalise]{cleveref}

@@ -1,0 +1,127 @@
+% Settings for the build guide. White PLA+ body with the three accent colours you will paint.
+
+% --- Metadata ---------------------------------------------------------------------------------
+\newcommand\guidetitle{Cyberpunk Monitor Stand}
+\newcommand\guideshort{Monitor stand · Build guide}
+\newcommand\guidesubtitle{Fixed armoured stand for the Samsung Essential S3 22'' (LS22C310), portrait first}
+\newcommand\guideauthor{Juan Manuel Young Hoyos}
+\newcommand\guidehandle{@jmyounghoyos}
+\newcommand\guideversion{1.0}
+\newcommand\placeanddate{Medellín, November 2026}
+
+% --- Colours ----------------------------------------------------------------------------------
+% StandBlue/Red/Yellow are the paint accents; the body itself is printed white.
+\definecolor{StandBlue}{HTML}{1F5FBF}
+\definecolor{StandBlueDark}{HTML}{17488F}
+\definecolor{StandRed}{HTML}{D7263D}
+\definecolor{StandYellow}{HTML}{F5B700}
+\definecolor{StandInk}{HTML}{1E2830}
+\definecolor{StandMuted}{HTML}{5E6B73}
+\definecolor{StandGray}{HTML}{9AA7AF}
+\definecolor{StandTint}{HTML}{EAF1FB}
+\definecolor{StandMist}{HTML}{F4F6F7}
+\definecolor{WarnAmber}{HTML}{B86E00}
+\definecolor{WarnTint}{HTML}{FFF4E0}
+\definecolor{OkGreen}{HTML}{2E7D32}
+
+\color{StandInk}
+
+% --- Links and PDF ----------------------------------------------------------------------------
+\hypersetup{
+    colorlinks = true, linkcolor = StandBlueDark, urlcolor = StandBlueDark, citecolor = StandBlueDark,
+    pdftitle = {\guidetitle\ - Build guide}, pdfsubject = {\guidesubtitle}, pdfauthor = {\guideauthor},
+    pdfkeywords = {3D printing, monitor stand, VESA, PLA+, heat-set inserts}, bookmarksnumbered = true,
+}
+\urlstyle{same}
+
+% --- Text -------------------------------------------------------------------------------------
+\setlength\parindent{0pt}
+\setlength\parskip{0.55em}
+\setstretch{1.08}
+\renewcommand{\arraystretch}{1.25}
+\frenchspacing
+\setlength\emergencystretch{1.5em}
+
+\setlist{itemsep = 0.15em, topsep = 0.3em}
+\setlist[itemize,1]{label = {\scriptsize\textcolor{StandBlue}{$\blacksquare$}}}
+\setlist[itemize,2]{label = {\scriptsize\textcolor{StandGray}{$\square$}}}
+\setlist[enumerate,1]{label = {\textbf{\textcolor{StandBlueDark}{\arabic*.}}}}
+\setlist[enumerate,2]{label = {\textbf{\textcolor{StandBlueDark}{\alph*)}}}}
+
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\DeclareCaptionFont{stand}{\color{StandBlueDark}}
+\captionsetup{labelfont = {stand, bf}, font = {small}, textfont = {color = StandMuted}, labelsep = period, skip = 6pt}
+
+% --- Header and footer ------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\bfseries\color{StandInk}\guidetitle}
+\fancyhead[R]{\small\color{StandMuted}\guideshort}
+\fancyfoot[L]{\footnotesize\color{StandMuted}\guidehandle\ · v\guideversion}
+\fancyfoot[R]{\footnotesize\color{StandMuted}Page \thepage\ of \pageref*{LastPage}}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\headrule}{\hbox to\headwidth{%
+  \color{StandBlue}\leaders\hrule height \headrulewidth\hskip 0.6\headwidth
+  \color{StandRed}\leaders\hrule height \headrulewidth\hskip 0.25\headwidth
+  \color{StandYellow}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
+
+% --- Titles: "N | Title" ----------------------------------------------------------------------
+\titleformat{\section}{\sffamily\color{StandBlueDark}\LARGE\bfseries}
+  {\thesection\enskip\color{StandGray}\textbar\enskip}{0pt}{}
+  [{\color{StandBlue}\titlerule[1.2pt]}]
+\titleformat{\subsection}{\sffamily\color{StandInk}\Large\bfseries}
+  {\color{StandBlueDark}\thesubsection\enskip\color{StandGray}\textbar\enskip}{0pt}{}
+\titleformat{\subsubsection}{\sffamily\color{StandBlueDark}\large\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{0pt}{1.1em}
+\titlespacing*{\subsection}{0pt}{1.3em}{0.5em}
+\titlespacing*{\subsubsection}{0pt}{1em}{0.3em}
+\newcommand{\sectionbreak}{\clearpage}
+
+\setcounter{tocdepth}{2}
+\titlecontents{section}[1.8em]{\addvspace{0.3em}\bfseries\color{StandInk}}
+  {\contentslabel[\color{StandBlueDark}\thecontentslabel]{1.8em}}{}{\titlerule*[0.6pc]{.}\contentspage}
+\titlecontents{subsection}[4.2em]{\color{StandMuted}}
+  {\contentslabel{2.4em}}{}{\titlerule*[0.6pc]{.}\contentspage}
+
+% --- Tables -----------------------------------------------------------------------------------
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcommand{\thd}[1]{\textcolor{StandBlueDark}{\textbf{#1}}}
+\newcommand{\zebra}{\rowcolors{2}{StandTint}{white}}
+
+% --- Reusable boxes ---------------------------------------------------------------------------
+\newtcolorbox{kpi}[1][]{enhanced, colback = white, colframe = StandGray!45, boxrule = 0.5pt,
+  borderline north = {2.4pt}{0pt}{StandBlue}, arc = 2pt, left = 7pt, right = 7pt, top = 6pt,
+  bottom = 6pt, valign = top, #1}
+\newcommand{\kpicard}[3]{%
+  \begin{kpi}\RaggedRight\setstretch{1}\hyphenpenalty = 10000\exhyphenpenalty = 10000
+    {\heavyfont\fontsize{19}{21}\selectfont\color{StandBlueDark}#1}\par\vspace{3pt}
+    {\footnotesize\bfseries #2}\par\vspace{1pt}
+    {\scriptsize\color{StandMuted}#3}
+  \end{kpi}}
+
+\newtcolorbox{step}[1]{enhanced, breakable, colback = StandMist, colframe = StandMist,
+  borderline west = {3pt}{0pt}{StandBlue}, arc = 0pt, left = 10pt, right = 8pt, top = 6pt,
+  bottom = 5pt, before skip = 6pt, after skip = 6pt,
+  title = {#1}, fonttitle = \bfseries\large\color{StandInk}, coltitle = StandInk,
+  colbacktitle = StandMist, attach title to upper = {\par\vspace{3pt}}}
+
+\newtcolorbox{nota}[1][]{enhanced, breakable, colback = StandTint, colframe = StandTint, arc = 2pt,
+  left = 9pt, right = 9pt, top = 6pt, bottom = 6pt, before skip = 8pt, after skip = 8pt, #1}
+\newtcolorbox{aviso}[1][]{enhanced, breakable, colback = WarnTint, colframe = WarnTint, arc = 2pt,
+  borderline west = {3pt}{0pt}{WarnAmber}, left = 9pt, right = 9pt, top = 6pt, bottom = 6pt,
+  before skip = 8pt, after skip = 8pt, #1}
+
+% Paint swatches for the painting table.
+\newcommand{\swatch}[1]{\tikz[baseline = -0.6ex]\fill[#1, draw = StandInk!40] (0,0) rectangle (0.9em,0.9em);}
+\newcommand{\paintblue}{\swatch{StandBlue}~Blue}
+\newcommand{\paintred}{\swatch{StandRed}~Red}
+\newcommand{\paintyellow}{\swatch{StandYellow}~Yellow}
+\newcommand{\paintblack}{\swatch{StandInk}~Black wash}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\DeclareUrlCommand\ruta{\urlstyle{tt}}
+\newcommand{\piece}[1]{\textbf{\color{StandBlueDark}#1}}

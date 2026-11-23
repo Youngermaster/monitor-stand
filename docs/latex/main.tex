@@ -1,0 +1,27 @@
+% Cyberpunk Monitor Stand: build guide.
+% Compile with XeLaTeX (see ../build.sh). Same architecture as informe-entrega-rediat:
+% General/Preamble (packages), General/Settings (colours, styles, boxes), Chapters/ (content).
+\documentclass[a4paper, 11pt]{article}
+\input{General/Preamble}
+\input{General/Settings}
+
+\begin{document}
+
+\input{Chapters/00-Cover}
+
+{\hypersetup{linkcolor = StandInk}\small\setstretch{1}\setlength\parskip{0pt}
+\tableofcontents\thispagestyle{plain}}
+
+\input{Chapters/01-Overview}
+\input{Chapters/02-Printing}
+\input{Chapters/03-Hardware}
+\input{Chapters/04-Inserts}
+\input{Chapters/05-Assembly}
+\input{Chapters/06-Orientation}
+\input{Chapters/07-Painting}
+\input{Chapters/08-Safety}
+
+\appendix
+\input{Chapters/A-Files}
+
+\end{document}

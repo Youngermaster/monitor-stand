@@ -1,0 +1,26 @@
+\section{Files and repository}\label{app:files}
+
+\begin{table}[H]
+\centering
+\caption{Repository layout (\texttt{GitHub/Youngermaster/monitor-stand}).}
+\zebra
+\begin{tabularx}{\linewidth}{@{}L{5.4cm}Y@{}}
+\toprule
+\thd{Path} & \thd{Content} \\
+\midrule
+\code{stl/01-base.stl}          & Base \\
+\code{stl/02-foot-left.stl}     & Left foot \\
+\code{stl/03-foot-right.stl}    & Right foot \\
+\code{stl/04-lower-column.stl}  & Lower column \\
+\code{stl/05-upper-arm.stl}     & Upper arm with head \\
+\code{stl/06-vesa-plate.stl}    & VESA plate \\
+\code{cad/monitor-stand.f3d}    & Fusion archive with the full timeline \\
+\code{images/}                  & Renders used in this guide \\
+\code{docs/latex/}              & Source of this guide \\
+\code{docs/build.sh}            & Builds \code{dist/monitor-stand-build-guide.pdf} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+To rebuild this PDF, run \code{./docs/build.sh} from the repository root. It needs XeLaTeX and latexmk
+(MacTeX or TeX Live); the fonts are included in \code{docs/latex/fonts/}.

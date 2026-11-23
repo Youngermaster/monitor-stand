@@ -1,0 +1,39 @@
+% Cover: same idea as the Okorum report (vertical bar + title + bottom band), in the stand's colours.
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[StandBlue] (current page.south west) rectangle ([yshift = 3.1cm]current page.south east);
+  \fill[StandRed] ([yshift = 3.1cm]current page.south west) rectangle ([yshift = 3.28cm, xshift = 14cm]current page.south west);
+  \fill[StandYellow] ([yshift = 3.1cm, xshift = 14cm]current page.south west) rectangle ([yshift = 3.28cm]current page.south east);
+  \node[anchor = west, font = \sffamily\large\bfseries, text = white]
+    at ([xshift = 2.4cm, yshift = 1.85cm]current page.south west) {\guideauthor\ · \guidehandle};
+  \node[anchor = west, font = \sffamily\normalsize, text = white]
+    at ([xshift = 2.4cm, yshift = 1.15cm]current page.south west) {Printed in white PLA+ · painted by hand};
+  \node[anchor = east, font = \sffamily\large, text = white]
+    at ([xshift = -2.4cm, yshift = 1.5cm]current page.south east) {\placeanddate};
+  \node[anchor = south east, inner sep = 0pt] at ([xshift = -1.2cm, yshift = 3.9cm]current page.south east)
+    {\includegraphics[width = 9.8cm]{with-monitor-portrait-front.png}};
+\end{tikzpicture}
+
+\vspace*{1.2cm}
+
+\begin{tikzpicture}
+  \fill[StandBlue] (0, 0) rectangle (0.16, -5.2);
+  \node[anchor = north west, text width = 14.2cm, inner sep = 0pt, align = left] at (0.6, 0) {\hyphenpenalty = 10000%
+    {\sffamily\color{StandBlueDark}\large\bfseries BUILD GUIDE · v\guideversion}\par\vspace{0.45cm}
+    {\heavyfont\fontsize{32}{37}\selectfont\color{StandInk}Cyberpunk\\Monitor Stand}\par\vspace{0.5cm}
+    {\sffamily\Large\color{StandMuted}\guidesubtitle}\par\vspace{0.55cm}
+    {\sffamily\large\color{StandInk}What to print, which screws and inserts go where,\\how to assemble it, and where to paint}};
+\end{tikzpicture}
+
+\vspace{1.4cm}
+
+{\sffamily
+\begin{tabular}{@{}>{\color{StandMuted}}l@{\hspace{1.2em}}l@{}}
+  Monitor   & \textbf{Samsung Essential S3 22''} (LS22C310), 2.0\,kg \\
+  Mount     & VESA 75\,×\,75 and 100\,×\,100, M4 \\
+  Printer   & Creality Ender-3 V3 SE (220\,×\,220\,mm) \\
+  Material  & PLA+ white, 6 parts, no supports \\
+\end{tabular}}
+
+\end{titlepage}
