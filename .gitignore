@@ -1,0 +1,13 @@
+# LaTeX build artefacts
+docs/latex/*.aux
+docs/latex/*.log
+docs/latex/*.out
+docs/latex/*.toc
+docs/latex/*.fls
+docs/latex/*.fdb_latexmk
+docs/latex/*.xdv
+docs/latex/*.synctex.gz
+docs/latex/main.pdf
+.DS_Store
+.qa/
+docs/latex/*.tmp
